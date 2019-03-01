@@ -80,8 +80,9 @@ void input_test(){
 			}
 			
 			printf("There are total %d segments, and %d points\n", s, p);
-			qsort(points, p, sizeof(int), sort_points);
 			print_array_2D(segments, s, 2);
+			print_array(points, p);
+			qsort(points, p, sizeof(int), sort_points);
 			printf("sorted points: ");
 			print_array(points, p);
 			int *ans1, *ans2;
