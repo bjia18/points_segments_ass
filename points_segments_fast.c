@@ -51,11 +51,11 @@ int comparison(const void *a, const void *b){
     a1=(const struct Seg*)a;
     b1=(const struct Seg*)b;
     if (a1->num-b1->num==0){
-        if (a1->side=='l' || b1->side=='l'){
+        if (a1->side=='l' || b1->side=='l'){//include point in left seg end
             if (a1->side=='p')
                 return 1;
             return -1;
-        } else{
+        } else{//include point in right seg end
             if (a1->side=='p')
                 return -1;
             return 1;
