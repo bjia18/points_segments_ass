@@ -110,10 +110,10 @@ void input_test(){
 	}
 }
 
-int main(int argc, char **argv) {
-	if (atoi(argv[1])==1 && argc==2)
+int main(int argc, char *argv[]) {
+	if (argc==2 && atoi(argv[1])==1)
 		input_test();
-	else if (atoi(argv[1])==0 && argc==6){
+	else if (argc==6 && atoi(argv[1])==0){
 		int p=atoi(argv[5]);
 		int s=atoi(argv[4]);
 		int **segs = malloc(s*sizeof(int *));
@@ -133,13 +133,13 @@ int main(int argc, char **argv) {
 				seg_pt=seg_pt%2;//so seg_pt is 0 or 1
 			}
 		}
-        count=0;
-        char* token = strtok(argv[3], ","); 
-        while (token != NULL) { 
-          pts[count]=atoi(token); 
-          count++;
-          token = strtok(NULL, ","); 
-        }
+        	count=0;
+        	char* token = strtok(argv[3], ","); 
+        	while (token != NULL) { 
+          		pts[count]=atoi(token); 
+          		count++;
+          		token = strtok(NULL, ","); 
+        	}
 		simple_test(segs, pts, s, p);
 	} else{
 		printf("input test: test <1>\nsimple test: test <0> <Segment array> <Point array> <s> <p>\nSeg array= [1,2],[3,4]\nPt array=1,2,3,4\nNO SPACE IN BETWEEN\n");
